@@ -20,6 +20,8 @@ services:
     image: bt
     ports:
       - "8081:8081"
+    working_dir: /2-tier
+    command: [“./gradlew”, “bootrun”]
     networks:
       - default
       - demo-network
@@ -32,6 +34,8 @@ services:
     image: pt
     ports:
       - "8082:8082"
+    working_dir: /2-tier
+    command: [“./gradlew”, “bootrun”]
     networks:
       - default
       - demo-network
