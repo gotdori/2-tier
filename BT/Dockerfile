@@ -1,11 +1,16 @@
-# Base image
+# Build stage
+FROM adoptopenjdk:11-jdk-hotspot as build
+WORKDIR /workspace/app
+COPY . /workspace/app
+RUN ./gradlew build
+
+# Package stage
 FROM adoptopenjdk:11-jre-hotspot
-
-# Set working directory
-WORKDIR /app
-
-# Copy application files to the container
-COPY . /app
+VOLUME /tmp
+ARG DEPENDENCY=/workspace/app/build/dependency
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
 # Expose a port
 EXPOSE 8081
