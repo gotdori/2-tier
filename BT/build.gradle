@@ -33,6 +33,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	
+	
 
 	// 2022.10.28[프뚜]: postgreSQL
 	implementation 'org.postgresql:postgresql:42.5.0'
