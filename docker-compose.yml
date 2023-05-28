@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:latest
+    container_name: demo-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=postgres
+    networks:
+      - default
+      - demo-network
+
+  business:
+    build: ./2-tier/BT
+    container_name: bt
+    image: bt
+    ports:
+      - "8081:8081"
+    networks:
+      - default
+      - demo-network
+    depends_on:
+      - database
+
+  presentaion:
+    build: ./2-tier/PT
+    container_name: pt
+    image: pt
+    ports:
+      - "8082:8082"
+    networks:
+      - default
+      - demo-network
+    depends_on:
+      - business
+networks:
+  demo-network:
+    driver: bridge
