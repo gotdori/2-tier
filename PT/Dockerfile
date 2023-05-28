@@ -18,4 +18,4 @@ ENV SPRING_THYMELEAF_SUFFIX=.html
 ENV SPRING_THYMELEAF_CACHE=false
 
 # Define the command to run the application
-CMD ["java", "-jar", "your-application.jar"]
+CMD ["java", "-jar", "com.ds.project01.DsProject01Application"]
