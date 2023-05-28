@@ -18,4 +18,4 @@ ENV SPRING_THYMELEAF_SUFFIX=.html
 ENV SPRING_THYMELEAF_CACHE=false
 
 # Define the command to run the application
-CMD ["java", "-jar", "/build/libs/PT-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "your-application.jar"]

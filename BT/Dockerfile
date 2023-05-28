@@ -27,4 +27,4 @@ ENV SPRING_THYMELEAF_CACHE=false
 ENV SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
 
 # Define the command to run the application
-CMD ["java", "-jar", "/build/libs/BT-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "your-application.jar"]
