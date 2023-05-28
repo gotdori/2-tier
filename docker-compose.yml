@@ -15,7 +15,7 @@ services:
       - demo-network
 
   business:
-    build: ./portfolio/BT
+    build: ./BT
     container_name: bt
     image: bt
     ports:
@@ -27,7 +27,7 @@ services:
       - database
 
   presentaion:
-    build: ./portfolio/PT
+    build: ./PT
     container_name: pt
     image: pt
     ports:
