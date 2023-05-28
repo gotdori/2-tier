@@ -15,9 +15,7 @@ services:
       - demo-network
 
   business:
-    build:
-      context: ./BT
-      dockerfile: Dockerfile
+    build: ./portfolio/BT
     container_name: bt
     image: bt
     ports:
@@ -28,10 +26,8 @@ services:
     depends_on:
       - database
 
-  presentation:
-    build:
-      context: ./PT
-      dockerfile: Dockerfile
+  presentaion:
+    build: ./portfolio/PT
     container_name: pt
     image: pt
     ports:

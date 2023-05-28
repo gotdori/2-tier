@@ -28,3 +28,4 @@ ENV SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
 
 # Define the command to run the application
 CMD ["java", "-jar", "your-application.jar"]
+
