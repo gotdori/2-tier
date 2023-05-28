@@ -27,4 +27,4 @@ ENV SPRING_THYMELEAF_CACHE=false
 ENV SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
 
 # Define the command to run the application
-CMD ["java", "-jar", "com.ds.project01.DsProject01Application"]
+CMD ["java","-cp", "app:app/lib/*", "com.ds.project01.DsProject01Application"]
