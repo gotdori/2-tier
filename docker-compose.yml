@@ -16,6 +16,7 @@ services:
 
   business:
     build: ./BT
+    dockerfile: Dockerfile
     container_name: bt
     image: bt
     ports:
@@ -28,6 +29,7 @@ services:
 
   presentaion:
     build: ./PT
+    dockerfile: Dockerfile
     container_name: pt
     image: pt
     ports:
